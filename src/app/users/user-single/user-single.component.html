@@ -1,0 +1,47 @@
+<section class="hero is-fullheight">
+  <section class="section">
+    <div class="container">
+      <div class="card" *ngIf="user">
+        <div class="card-content">
+          <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                  <img class="image is-128x128" [src]="user.avatar">
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">ID</p>
+                <p class="title">{{ user.id }}</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Email</p>
+                <p class="title">{{ user.email }}</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">First Name</p>
+                <p class="title">{{ user.first_name }}</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Last Name</p>
+                <p class="title">{{ user.last_name }}</p>
+              </div>
+            </div>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="form-group">
+      <a routerLink="/users" class="btn btn-link">Back to user management</a>
+    </div>
+  </section>
+</section>

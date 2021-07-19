@@ -1,0 +1,24 @@
+<section class="hero is-fullheight">
+  <section class="section">
+    <div class="addUser">
+        <button class="button is-primary" routerLink="add" > Add a user </button>
+    </div>
+    <div class="container">
+      <div class="columns is-multiline" *ngIf="users">
+        <div class="column is-4" *ngFor="let user of users | async">
+          
+          <div class="card">
+            <div class="card-content">
+              <a routerLink="/users/{{ user.id }}">
+                {{ user.email }}
+              </a>
+              <button class="button is-primary is-light is-small" routerLink="/users/{{ user.id }}" > Profile </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+</section>

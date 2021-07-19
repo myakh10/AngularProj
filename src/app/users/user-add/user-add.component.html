@@ -1,0 +1,50 @@
+<section class="hero is-primary is-fullheight">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p class="title">
+            Add user
+        </p>
+        <div class="container">
+            <section class="section">
+                <div class="container2">
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                <div *ngIf="f.email.errors.asyncValidation">Email already exists</div>
+                                <div *ngIf="f.email.errors.emailNotFromReqres">Email is not defined in reqres</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                            </div>
+                            <div class="help is-error" [ngClass]="f.password.errors ? '' : 'text-success'">Use 8 or more characters with a mix of capital and small letters & numbers</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm password</label>
+                            <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                            <div class="invalid-feedback" *ngIf="submitted && f.confirmPassword.errors">
+                                Password don't match
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary">Save</button>
+                        </div>
+                        <div class="form-group">
+                            <a routerLink="/users" class="btn btn-link">Cancel</a>
+                        </div>
+                    </form>
+            
+                </div>
+            </section>
+        </div>
+      </div>
+    </div>
+  </section>
