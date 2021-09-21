@@ -59,7 +59,7 @@ export class AuthentificationComponent implements OnInit {
     if (this.registerForm.invalid) {
         return;
     }
-
+    
     this.userService.doAuthentification(this.router, this.registerForm.controls['email'].value, this.registerForm.controls['password'].value);
   }
 }
